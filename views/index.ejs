@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <form action="/add" method="post">
+    <h1>BREAD (Browse Read Edit Delete)</h1>
+    <table >
+      <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Weight</th>
+        <th>Height</th>
+        <th>Date</th>
+        <th>Marriage Status</th>
+        <th>Action</th>
+      </tr>
+      <% nama.forEach((item, index) => { %>
+      <tr class="genap">
+        <td><%= index + 1 %></td>
+        <td><%= item.name %></td>
+        <td><%= item.weight %></td>
+        <td><%= item.height %></td>
+        <td><%= item.date %></td>
+        <td><%= item.status %></td>
+        <td>
+            <a class="edit" href="/edit/<%= index %>">edit</a>
+            <a class="delete" href="/delete/<%= index %>">delete</a>
+        </td>
+      </tr>
+    <% }) %>
+     
+      
+    </table>
+    <br /><br />
+    <button> <a class="add" href="add"> Add</a>
+    </button>
+  </form>
+  </body>
+</html>
